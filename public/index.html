@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="js/jquery.js"></script>
+  
+    <script type="text/javascript" src="script.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>My Bookmarks</title>
+  </head>
+
+  <body>
+    <div id="login">  
+      <h2>Login</h2>
+       <form method="" action="">
+ 
+        
+        <div id="td1"><b>Username:&nbsp;&nbsp;</b> </div><div id="td1.1"><input type="text" name="user"></div>
+        <div id="td2"><b>Password:&nbsp;&nbsp;</b></div><div id="td2.1"><input type="Password" name="pass"></div>
+        <div id="tds"><input  type="submit" value="login"  id="lsubmit">
+          
+        </div>
+      </form>
+      
+   </div>
+
+
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          
+<img id="myimage" src="photo.jpg"></img>
+
+
+<div id="something">
+Bookmarks your favourite sites now.
+</div>
+          <h2 style="color:#0AE1DA" id="name1" >Register now to get started.</h2>
+        <form id="newform" action ="" onSubmit="check(this)">
+  <table>
+  <tr>
+     <td>         
+  Nickname:
+</td>
+<td>
+  <input type="text" id="username">
+</td>  
+</tr>
+
+<tr><td>
+  Password:</td>
+<td>
+  <input type="password" id="pwd1"></td>
+</tr>
+<tr>
+
+ <td> Re-Enter:</td>
+<td>
+ <input type="password" id="pwd2"></td> 
+</tr>
+<tr>  
+          <td colspan="2"><input type="submit" id="submit"></td>
+
+         </form> 
+
+        </header>
+        <hr>
+
+        <section id="main_content">
+          <h3></h3>
+
+<p style="color:black"></p>
+
+<p></p>
+
+        </section>
+        <script>function check(form)
+  {
+    if(form.username.value == "") {
+      alert("Error: Username cannot be blank!");
+      form.username.focus();
+      return false;
+    }
+    re = /^\w+$/;
+    if(!re.test(form.username.value)) {
+      alert("Error: Username must contain only letters, numbers and underscores!");
+      form.username.focus();
+      return false;
+    }
+
+    if(form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
+      if(form.pwd1.value.length < 6) {
+        alert("Error: Password must contain at least six characters!");
+        form.pwd1.focus();
+        return false;
+      }
+      if(form.pwd1.value == form.username.value) {
+        alert("Error: Password must be different from Username!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[0-9]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one number (0-9)!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[a-z]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one lowercase letter (a-z)!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[A-Z]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one uppercase letter (A-Z)!");
+        form.pwd1.focus();
+        return false;
+      }
+    } else {
+      alert("Error: Please check that you've entered and confirmed your password!");
+      form.pwd1.focus();
+      return false;
+    }
+
+    alert("You entered a valid password: " + form.pwd1.value);
+    return true;
+  }
+
+        </script>
+      
+
+
+
+      </div>
+    </div>
+
+      
+  </body>
+</html>
